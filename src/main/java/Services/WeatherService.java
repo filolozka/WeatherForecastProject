@@ -6,9 +6,6 @@ import Entities.SearchResult;
 public class WeatherService {
     private WeatherGateway gateway;
 
-    public WeatherService() {
-    }
-
     public WeatherService(WeatherGateway gateway){
         this.gateway = gateway;
     }
@@ -19,6 +16,6 @@ public class WeatherService {
             throw new RuntimeException("No results for " + cityName);
         }
         Forecast forecast = gateway.getWeatherByWoeid(cityByName[0].getWoeid());
-        return forecast.getConsolidatedWeathers()[0].getTheTemp();
+        return forecast.getConsolidatedWeather()[0].getTheTemp();
     }
 }
