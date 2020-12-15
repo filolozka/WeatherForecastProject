@@ -1,29 +1,32 @@
 package Entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import java.util.Arrays;
 
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class Forecast {
-    private ConsolidatedWeather[] consolidatedWeathers;
+    private ConsolidatedWeather[] consolidatedWeather;
 
     public Forecast() {
     }
 
     public Forecast(ConsolidatedWeather[] weather) {
-        this.consolidatedWeathers = weather;
+        this.consolidatedWeather = weather;
     }
 
-    public ConsolidatedWeather[] getConsolidatedWeathers() {
-        return consolidatedWeathers;
+    public ConsolidatedWeather[] getConsolidatedWeather() {
+        return consolidatedWeather;
     }
 
-    public void setConsolidatedWeathers(ConsolidatedWeather[] consolidatedWeathers) {
-        this.consolidatedWeathers = consolidatedWeathers;
+    public void setConsolidatedWeather(ConsolidatedWeather[] consolidatedWeather) {
+        this.consolidatedWeather = consolidatedWeather;
     }
 
     @Override
     public String toString() {
         return "Forecast{" +
-                "weatherList=" + Arrays.toString(consolidatedWeathers) +
+                "weatherList=" + Arrays.toString(consolidatedWeather) +
                 '}';
     }
 }
