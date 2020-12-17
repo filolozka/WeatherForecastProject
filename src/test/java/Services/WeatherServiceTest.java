@@ -23,7 +23,7 @@ public class WeatherServiceTest {
         when(gateway.getWeatherByWoeid(anyString())).thenReturn(createTestForecast());
 
         WeatherService service = new WeatherService(gateway);
-        String weatherInBerlin = service.getWeatherByCityName("Berlin");
+        String weatherInBerlin = service.getWeatherByCityName("Berlin").get();
         assertEquals("25", weatherInBerlin);
     }
     private SearchResult[] createSearchResult() {

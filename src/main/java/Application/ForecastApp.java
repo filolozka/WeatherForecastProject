@@ -22,7 +22,7 @@ public class ForecastApp {
     public void execute() throws Exception {
         log.info("Started");
         String s = inputOutputService.keyboardInput();
-        String result = weatherService.getWeatherByCityName(s);
+        String result = weatherService.getWeatherByCityName(s).toString();
         inputOutputService.printToConsole(result);
         log.info("Finished");
     }
